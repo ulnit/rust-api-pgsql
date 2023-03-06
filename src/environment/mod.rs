@@ -1,7 +1,15 @@
+/*
+ * @Description: 
+ * @Version: 1.0
+ * @Autor: Sean
+ * @Date: 2023-03-04 18:58:57
+ * @LastEditors: Sean
+ * @LastEditTime: 2023-03-05 00:16:00
+ */
 use std::convert::Infallible;
 use std::net::SocketAddr;
 
-use clap::Clap;
+use clap::Parser;
 use sqlx::postgres::PgPool;
 use warp::Filter;
 
@@ -16,7 +24,7 @@ pub struct Environment {
     argon: Argon,
 }
 
-#[derive(Clone, Clap, Debug)]
+#[derive(Clone, Parser, Debug)]
 #[clap(
 name = "demo-api",
 rename_all = "kebab-case",
@@ -26,19 +34,19 @@ pub struct Args {
     #[clap(short, long)]
     debug: bool,
 
-    #[clap(required = true, short = 'D', long, env)]
+    #[clap(required = true, short = 'D', long)]
     database_url: String,
 
-    #[clap(required = true, long, env)]
+    #[clap(required = true, long)]
     jwt_secret: String,
-    #[clap(required = true, long, env)]
+    #[clap(required = true, long)]
     argon_secret: String,
-    #[clap(long, env)]
+    #[clap(long)]
     argon_iterations: Option<u32>,
-    #[clap(long, env)]
+    #[clap(long)]
     argon_memory_size: Option<u32>,
 
-    #[clap(default_value = "0.0.0.0:8080", env)]
+    #[clap(default_value = "0.0.0.0:8080")]
     pub host: SocketAddr,
 }
 

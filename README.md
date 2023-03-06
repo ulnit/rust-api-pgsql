@@ -155,3 +155,8 @@ Generate sqlx schema file required for "offline" builds (without need to reach D
 #### Run cargo build
 
     cargo build --release
+
+
+# 本地执行
+## 启动
+	.\target\debug\rust-crud-sql.exe --database-url "postgres://demo:demo@localhost:5432/demo" --jwt-secret dEmOsEcReT!1 --argon-secret dEmOaRgOnSeCrEt!1 0.0.0.0:8001
