@@ -1,8 +1,8 @@
 [package]
-name = "rust-crud-sql"
+name = "rust-api-pgsql"
 version = "0.1.0"
-authors = ["Leonardo Devai <leonardo@devai.io>"]
-edition = "2018"
+authors = ["Sean <363698476@qq.com>"]
+edition = "2021"
 
 [dependencies]
 tokio = { version = "0.2", features = ["full"] }

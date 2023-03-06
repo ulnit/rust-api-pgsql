@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   app:
-    container_name: rust-crud-sql-api
+    container_name: rust-api-pgsql
     build:
       context: .
       dockerfile: Dockerfile
@@ -15,7 +15,7 @@ services:
       COMPOSE_CONVERT_WINDOWS_PATHS: 1
 
   db:
-    container_name: rust-crud-sql-db
+    container_name: rust-api-pgsql-db
     image: postgres:latest
     user: 'root'
     ports:
@@ -29,7 +29,7 @@ services:
     restart: always
 
   adminer:
-    container_name: rust-crud-sql-adminer
+    container_name: rust-api-pgsql-adminer
     image: adminer
     restart: always
     ports:

@@ -22,9 +22,9 @@ COPY docker .
 COPY --from=cacher /app/target target
 COPY --from=cacher /usr/local/cargo /usr/local/cargo
 ENV SQLX_OFFLINE=true
-RUN cargo build --release --bin rust-crud-sql-api
+RUN cargo build --release --bin rust-api-pgsql
 
 FROM rust as runtime
 WORKDIR app
-COPY --from=builder /app/target/release/rust-crud-sql-api /app
-CMD ["/app/rust-crud-sql-api"]
+COPY --from=builder /app/target/release/rust-api-pgsql /app
+CMD ["/app/rust-api-pgsql"]
