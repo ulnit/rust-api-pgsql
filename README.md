@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Rust Crud Application using Warp and SQL (Postgres) with JWT authentication
 
 This boilerplate application offers the following endpoints, with JWT role-based validation on most of them:
@@ -160,3 +161,6 @@ Generate sqlx schema file required for "offline" builds (without need to reach D
 # 本地执行
 ## 启动
 	.\target\debug\rust-crud-sql.exe --database-url "postgres://demo:demo@localhost:5432/demo" --jwt-secret dEmOsEcReT!1 --argon-secret dEmOaRgOnSeCrEt!1 0.0.0.0:8001
+=======
+# rust-api-pgsql
+>>>>>>> 968fae766bc7e2bb0dce7416a82aeb5da03a5b75
